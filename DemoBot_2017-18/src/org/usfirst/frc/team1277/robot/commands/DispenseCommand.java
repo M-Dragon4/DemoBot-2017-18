@@ -36,7 +36,7 @@ public class DispenseCommand extends Command
 	protected boolean isFinished()
 	{
 		if(done == true) { return true; }
-		return false;
+		else return false;
 	}
 
 	protected void end()

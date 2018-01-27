@@ -2,13 +2,14 @@
 package org.usfirst.frc.team1277.robot;
 
 import org.usfirst.frc.team1277.robot.subsystems.Dispense;
+import org.usfirst.frc.team1277.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team1277.robot.subsystems.Shoot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 
 /**
@@ -21,9 +22,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 public class Robot extends IterativeRobot
 {
 	Joystick stick;
-	RobotDrive robotDrive;
+	DifferentialDrive robotDrive;
 	
 	public static Dispense dispense;
+	public static DriveTrain drive;
+	public static Shoot shooter;
 	public static OI oi;
 
 	Command autonomousCommand;
@@ -38,6 +41,8 @@ public class Robot extends IterativeRobot
 	{
 		RobotMap.init();
 		dispense = new Dispense();
+		drive = new DriveTrain();
+		shooter = new Shoot();
 		oi = new OI();
 	}
 
@@ -119,6 +124,5 @@ public class Robot extends IterativeRobot
 	@Override
 	public void testPeriodic()
 	{
-		LiveWindow.run();
 	}
 }

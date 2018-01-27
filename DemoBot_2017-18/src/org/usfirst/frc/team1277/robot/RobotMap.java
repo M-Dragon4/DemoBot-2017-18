@@ -2,10 +2,10 @@ package org.usfirst.frc.team1277.robot;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.Talon;
 public class RobotMap
 {
 	public static Joystick stick = OI.getJoystick();
-	public static RobotDrive robotDrive;
+	public static DifferentialDrive robotDrive;
 	
 	//Dispenser
 	public static Servo dispenser;
@@ -37,6 +37,6 @@ public class RobotMap
 		driveTrainRight = new Talon(1);
 		driveTrainLeft = new Talon(0);
 		
-		robotDrive = new RobotDrive(driveTrainRight, driveTrainLeft);
+		robotDrive = new DifferentialDrive(driveTrainRight, driveTrainLeft);
 	}
 }
